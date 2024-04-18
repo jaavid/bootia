@@ -21,11 +21,20 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Build APK
+    - name: Build tabriz APK
       run: ./gradlew assembleTabrizRelease
 
-    - name: Upload APK
+    - name: Upload tabriz APK
       uses: actions/upload-artifact@v2
       with:
         name: app-tabriz-release
         path: app/build/outputs/apk/tabriz/release/app-tabriz-release.apk
+
+    - name: Build kerman APK
+      run: ./gradlew assembleKermanRelease
+
+    - name: Upload kerman APK
+      uses: actions/upload-artifact@v2
+      with:
+        name: app-kerman-release
+        path: app/build/outputs/apk/kerman/release/app-kerman-release.apk
