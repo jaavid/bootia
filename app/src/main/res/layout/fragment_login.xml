@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="loginVM"
+            type="com.controladad.boutia_pms.view_models.LoginVM"/>
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="rtl"
+        >
+        <!--<com.flaviofaria.kenburnsview.KenBurnsView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:scaleType="centerCrop"-->
+            <!--android:src="@drawable/login_background"/>-->
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/login_background"
+            android:scaleType="centerCrop"/>
+
+	    <androidx.constraintlayout.widget.ConstraintLayout
+		    xmlns:app="http://schemas.android.com/apk/res-auto"
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+
+		    >
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftOfLogo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightOfLogo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.66"/>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfLogo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomOfLogo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.38"/>
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_logo"
+            android:padding="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomOfLogo"
+            app:layout_constraintEnd_toStartOf="@+id/leftOfLogo"
+            app:layout_constraintStart_toStartOf="@+id/rightOfLogo"
+            app:layout_constraintTop_toTopOf="@+id/topOfLogo"
+
+            />
+
+        <TextView
+            android:id="@+id/txtAppName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="4dp"
+            android:text="@string/boutia_niro_app"
+
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bottomOfLogo"
+            app:textviewfont="@{`faNumRegular`}" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/background_gradient_orange_yellow"
+            android:onClick="@{loginVM.onLoginClick()}"
+            android:text="@string/login_enter"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAppName"
+            app:textviewfont="@{`faNumRegular`}" />
+
+            <EditText
+                android:id="@+id/txtDeviceID"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button"
+                android:layout_margin="32dp"
+                android:text="@{loginVM.strDeviceID}"
+                android:background="@drawable/input_number_background"
+                android:visibility="@{loginVM.showDeviceIDView}"
+                />
+
+            <Button
+                android:id="@+id/btnShowDeviceID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:onClick="@{loginVM.onDeviceIDClicked()}"
+                android:visibility="@{loginVM.showDeviceIDView}"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:background="@drawable/background_gradient_orange_yellow"
+                android:text="@string/show_device_id"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDeviceID"
+                app:textviewfont="@{`faNumRegular`}" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

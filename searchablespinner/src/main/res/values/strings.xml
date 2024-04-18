@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SearchableSpinner</string>
+    <string name="done_search">اتمام جستجو</string>
+    <string name="start_search">شروع جستجو</string>
+    <string name="search">جستجو...</string>
+    <string name="empty_list">آیتمی پیدا نشد.</string>
+</resources>

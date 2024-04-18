@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="sixRadioButtonDataModel"
+            type="com.controladad.boutia_pms.view_models.items_view_models.SixRadioButtonDataModel"/>
+    </data>
+
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layoutDirection="rtl"
+       >
+
+       <androidx.constraintlayout.widget.Guideline
+           android:id="@+id/verticalHalf"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           app:layout_constraintGuide_percent="0.5"
+           android:orientation="vertical"/>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:orientation="horizontal"
+           android:weightSum="1"
+           android:layout_height="wrap_content">
+           <RadioGroup
+               android:id="@+id/right_radio_group"
+               android:layout_width="0dp"
+               android:layout_weight="0.5"
+               android:orientation="vertical"
+               android:layout_height="wrap_content">
+               <RadioButton
+                   android:onClick="@{sixRadioButtonDataModel.onRightItemsClicked()}"
+                   android:id="@+id/firstRadioButton"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   app:textviewfont="@{`faNumRegular`}"
+                   android:layout_margin="8dp"
+                   android:layout_marginStart="8dp"
+                   android:layout_marginTop="8dp"
+                   android:text="@{sixRadioButtonDataModel.firstRadioButton}"
+                   app:color_checked="@color/colorAccent"
+                   app:layout_constraintStart_toEndOf="parent"
+                   app:layout_constraintTop_toTopOf="parent" />
+               <RadioButton
+                   android:onClick="@{sixRadioButtonDataModel.onRightItemsClicked()}"
+                   android:id="@+id/secondRadioButton"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   app:textviewfont="@{`faNumRegular`}"
+                   android:layout_margin="8dp"
+                   android:layout_marginStart="8dp"
+                   android:layout_marginTop="8dp"
+                   android:text="@{sixRadioButtonDataModel.secondRadioButton}"
+                   app:color_checked="@color/colorAccent"
+                   app:layout_constraintStart_toEndOf="@id/verticalHalf"
+                   app:layout_constraintTop_toTopOf="parent" />
+
+               <RadioButton
+                   android:onClick="@{sixRadioButtonDataModel.onRightItemsClicked()}"
+                   android:id="@+id/thirdRadioButton"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   app:textviewfont="@{`faNumRegular`}"
+                   android:layout_margin="8dp"
+                   android:layout_marginStart="8dp"
+                   android:text="@{sixRadioButtonDataModel.thirdRadioButton}"
+                   app:color_checked="@color/colorAccent"
+                   app:layout_constraintStart_toEndOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/firstRadioButton" />
+           </RadioGroup>
+           <RadioGroup
+               android:id="@+id/left_radio_group"
+               android:layout_width="0dp"
+               android:layout_weight="0.5"
+               android:orientation="vertical"
+               android:layout_height="wrap_content">
+       <RadioButton
+           android:onClick="@{sixRadioButtonDataModel.onLeftItemsClicked()}"
+           android:id="@+id/fourthRadioButton"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           app:textviewfont="@{`faNumRegular`}"
+           android:layout_margin="8dp"
+           android:layout_marginStart="8dp"
+           android:text="@{sixRadioButtonDataModel.fourthRadioButton}"
+           app:color_checked="@color/colorAccent"
+           app:layout_constraintStart_toEndOf="@id/verticalHalf"
+           app:layout_constraintTop_toBottomOf="@+id/firstRadioButton" />
+       <RadioButton
+           android:onClick="@{sixRadioButtonDataModel.onLeftItemsClicked()}"
+           android:id="@+id/fifthRadioButton"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           app:textviewfont="@{`faNumRegular`}"
+           android:layout_margin="8dp"
+           android:layout_marginStart="8dp"
+           android:text="@{sixRadioButtonDataModel.fifthRadioButton}"
+           app:color_checked="@color/colorAccent"
+           app:layout_constraintStart_toEndOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/thirdRadioButton" />
+       <RadioButton
+           android:onClick="@{sixRadioButtonDataModel.onLeftItemsClicked()}"
+           android:id="@+id/sixthRadioButton"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           app:textviewfont="@{`faNumRegular`}"
+           android:layout_margin="8dp"
+           android:layout_marginStart="8dp"
+           android:text="@{sixRadioButtonDataModel.sixthRadioButton}"
+           app:color_checked="@color/colorAccent"
+           app:layout_constraintStart_toEndOf="@id/verticalHalf"
+           app:layout_constraintTop_toBottomOf="@+id/thirdRadioButton" />
+           </RadioGroup>
+       </LinearLayout>
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</layout>

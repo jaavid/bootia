@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.controladad.boutia_pms.view_models.items_view_models.TowerChooseIVM" />
+    </data>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layoutDirection="rtl"
+            android:background="@{viewModel.backGround()}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/halfOfReportTrackCardItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5"/>
+
+            <TextView
+                android:id="@+id/mission_point_with_mission_number_text_view_constant"
+                app:textviewfont="@{`faNumRegular`}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/tower_number"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/mission_point_with_mission_number_text_view_database"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@{viewModel.itemName}"
+                android:textColor="@color/report_data_text_view"
+                android:textAlignment="viewStart"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/halfOfReportTrackCardItem"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textviewfont="@{`faNumRegular`}"
+                />
+
+            <TextView
+                android:id="@+id/number_of_point_text_view_constant"
+                app:textviewfont="@{`faNumRegular`}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/review_date"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintStart_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mission_point_with_mission_number_text_view_database" />
+
+            <TextView
+                app:textviewfont="@{`faNumRegular`}"
+                android:layout_width="0dp"
+                android:text="@{viewModel.date}"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textAlignment="viewStart"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/report_data_text_view"
+                android:textSize="@dimen/_13ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/halfOfReportTrackCardItem"
+                app:layout_constraintTop_toBottomOf="@id/mission_point_with_mission_number_text_view_database" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

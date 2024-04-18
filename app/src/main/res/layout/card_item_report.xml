@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="reportItemDataModel"
+            type="com.controladad.boutia_pms.view_models.items_view_models.ReportItemDataModel" />
+    </data>
+    <!--  <android.support.v7.widget.CardView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+
+          android:layout_marginBottom="15dp"
+          android:layout_marginRight="10dp"
+          android:layout_marginLeft="10dp"
+          android:layout_marginTop="15dp"
+          app:cardElevation="1dp"
+          app:contentPadding="15dp">-->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp"
+        >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layoutDirection="rtl">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/halfOfReportCardItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.48" />
+
+    <!--    <ImageView
+            android:id="@+id/deleteCardItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/ic_delete"
+
+            app:layout_constraintTop_toTopOf="parent" />-->
+        <TextView
+            android:id="@+id/tower_number_text_view_constant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/tower_number_colon"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:textviewfont="@{`faNumRegular`}" />
+        <!-- app:layout_constraintTop_toBottomOf="@id/deleteCardItem"-->
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@{reportItemDataModel.towerCode}"
+            android:textAlignment="viewStart"
+            android:textColor="@color/report_data_text_view"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/halfOfReportCardItem"
+            app:layout_constraintTop_toTopOf="parent"
+            app:textviewfont="@{`faNumRegular`}" />
+        <!--   app:layout_constraintTop_toBottomOf="@id/deleteCardItem"-->
+
+        <!--<TextView
+            android:id="@+id/dispatching_text_view_constant"
+            app:textviewfont="@{`faNumRegular`}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/dispatching_code_colon"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tower_number_text_view_constant" />
+        <TextView
+            app:textviewfont="@{`faNumRegular`}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textAlignment="viewStart"
+            android:layout_marginTop="8dp"
+            android:texttrackReportItemDataModelodel.dispatchingCode}"
+            android:textColor="@color/report_data_text_view"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/halfOfReportCardItem"
+
+            app:layout_constraintTop_toBottomOf="@id/tower_number_text_view_constant" />
+-->
+
+        <TextView
+            android:id="@+id/line_name_text_view_constant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/mission_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tower_number_text_view_constant"
+            app:textviewfont="@{`faNumRegular`}" />
+
+        <TextView
+            android:id="@+id/line_name_text_view_database"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@{reportItemDataModel.missionName}"
+            android:textAlignment="viewStart"
+            android:textColor="@color/report_data_text_view"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/halfOfReportCardItem"
+            app:layout_constraintTop_toBottomOf="@id/tower_number_text_view_constant"
+
+            app:textviewfont="@{`faNumRegular`}" />
+
+
+        <!--left side-->
+
+        <TextView
+            android:id="@+id/noe_bazdid_text_view_constant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/review_type"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_name_text_view_database"
+            app:textviewfont="@{`faNumRegular`}" />
+
+        <TextView
+            android:id="@+id/noe_bazdid_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@{reportItemDataModel.reviewType}"
+            android:textAlignment="viewStart"
+            android:textColor="@color/report_data_text_view"
+            android:textSize="@dimen/_13ssp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/halfOfReportCardItem"
+            app:layout_constraintTop_toBottomOf="@id/line_name_text_view_database"
+
+
+            app:textviewfont="@{`faNumRegular`}" />
+
+        <TextView
+            android:id="@+id/tarikh_bazdid_text_view_constant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/review_date_colon"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/noe_bazdid_text_view_constant"
+            app:textviewfont="@{`faNumRegular`}" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@{reportItemDataModel.reviewDate}"
+            android:textAlignment="viewStart"
+            android:textColor="@color/report_data_text_view"
+            android:textSize="@dimen/_13ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/halfOfReportCardItem"
+
+
+            app:layout_constraintTop_toBottomOf="@id/noe_bazdid_text_view_constant"
+            app:textviewfont="@{`faNumRegular`}" />
+
+
+        <!--<View-->
+            <!--android:id="@+id/splitter"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:background="@color/colorAccent"-->
+
+            <!--app:layout_constraintTop_toBottomOf="@+id/sync_data_container" />-->
+
+        <LinearLayout
+            android:id="@+id/sync_data_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layoutDirection="rtl"
+            android:orientation="horizontal"
+            android:weightSum="1"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/halfOfReportCardItem"
+
+            app:layout_constraintTop_toBottomOf="@id/tarikh_bazdid_text_view_constant">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5">
+            <ImageView
+                image_src="@{reportItemDataModel.imageUploaded}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="8dp" />
+
+
+            <ImageView
+                image_src="@{reportItemDataModel.submitted}"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="8dp" />
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5">
+            <Button
+                android:id="@+id/btn_send_to_site"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@color/colorAccent"
+                android:onClick="@{reportItemDataModel.onSendDataClickListener()}"
+                android:text="@{reportItemDataModel.buttonText}"
+                android:visibility="@{reportItemDataModel.reportButtonVisibility}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_13ssp"
+                app:textviewfont="@{`faNumRegular`}" />
+                <androidx.core.widget.ContentLoadingProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="@{reportItemDataModel.reportProgressVisibility}"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_margin="8dp"/>
+
+        </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</layout>

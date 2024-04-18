@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="qrScannerVM"
+            type="com.controladad.boutia_pms.view_models.QRScannerVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline07_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.70" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline09_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline05_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/light_blue_qr"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/guideline09_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline07_horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+
+                android:gravity="bottom">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="bottom"
+                    android:text="@={qrScannerVM.barCode}"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/edit_text_background"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:hint="@string/code_number"
+                    android:textSize="@dimen/_14ssp"
+                    app:textviewfont="@{`faNumRegular`}"/>
+            </LinearLayout>
+
+
+            <Button
+                android:onClick="@{qrScannerVM.onOkButtonClicked()}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                app:textviewfont="@{`faNumRegular`}"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:textColor="@color/white"
+                android:background="@drawable/background_gradient_orange_yellow"
+                android:text="@string/ok_and_continue"
+                android:drawablePadding="8dp"
+                android:padding="8dp" />
+            <!--                android:drawableStart="@drawable/ic_forward"
+-->
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/content_frame"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline07_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/light_blue_qr"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/guideline09_horizontal" />
+        </FrameLayout>
+
+        <!--<FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="@id/guideline07_horizontal"
+            app:layout_constraintEnd_toEndOf="@id/guideline05_vertical"
+            app:layout_constraintStart_toStartOf="@id/guideline05_vertical"
+            app:layout_constraintTop_toTopOf="@id/guideline07_horizontal">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:text="@string/or"
+                android:textSize="@dimen/_14ssp"
+                app:textviewfont="@{`faLight`}" />
+        </FrameLayout>-->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/light_blue_qr"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline09_horizontal"></LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

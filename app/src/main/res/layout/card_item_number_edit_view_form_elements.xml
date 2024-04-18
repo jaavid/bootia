@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="numberEditViewDataModel"
+            type="com.controladad.boutia_pms.view_models.items_view_models.NumberEditViewDataModel"/>
+    </data>
+   <!-- <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layoutDirection="rtl"
+        android:layout_height="match_parent"
+       >
+
+        <android.support.constraint.Guideline
+            android:id="@+id/topOfTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.02" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/bottomOfTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.08" />
+
+
+        <android.support.constraint.Guideline
+            android:id="@+id/topOfTxtMissionChose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/bottomOfTxtMissionChose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.18" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/leftOfTxtMissionChose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/rightOfTxtMissionChose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@{numberEditViewDataModel.inputNumberTitle}"
+            android:textSize="@dimen/_15ssp"
+            android:textColor="@color/black"
+            app:textviewfont="@{`faNumRegular`}"
+            app:layout_constraintBottom_toTopOf="@+id/bottomOfTextView"
+            app:layout_constraintStart_toStartOf="@+id/rightOfTxtMissionChose"
+            app:layout_constraintTop_toTopOf="@+id/topOfTextView"
+            />-->
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_input_layout_user_entry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:text_input_font="@{`faNumRegular`}"
+            android:hint="@{numberEditViewDataModel.inputNumberTitle}"
+            android:textColorHint="@color/colorAccent"
+            android:background="@drawable/input_number_background"
+            >
+
+        <EditText
+            android:id="@+id/txt_input_user_entry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:textviewfont="@{`faNumRegular`}"
+            android:background="@color/white"
+            android:digits="0123456789"
+            android:inputType="number"
+            android:text="@={numberEditViewDataModel.inputNumber}"
+            android:textSize="@dimen/_15ssp"
+            android:layout_margin="10dp"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+       <!-- <EditText
+            android:id="@+id/txt_input_number_user_entry"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/input_number_background"
+            android:digits="0123456789"
+            android:hint="@{numberEditViewDataModel.inputNumberTitle}"
+            android:text="@={numberEditViewDataModel.inputNumber}"
+            android:inputType="number"
+            android:padding="8dp"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/text_view_search_color"
+            android:textSize="@dimen/_15ssp"
+            app:textviewfont="@{`faNumRegular`}"
+            app:layout_constraintBottom_toTopOf="@+id/bottomOfTxtMissionChose"
+            app:layout_constraintEnd_toStartOf="@+id/leftOfTxtMissionChose"
+            app:layout_constraintStart_toStartOf="@+id/rightOfTxtMissionChose"
+            app:layout_constraintTop_toTopOf="@+id/topOfTxtMissionChose" />
+-->
+   <!-- </android.support.constraint.ConstraintLayout>-->
+    </LinearLayout>
+</layout>

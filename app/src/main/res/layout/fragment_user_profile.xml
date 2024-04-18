@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="userProfileVM"
+            type="com.controladad.boutia_pms.view_models.UserProfileVM"/>
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layoutDirection="rtl">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/topOfPicture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.05"
+        android:orientation="horizontal"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomOfPicture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.25"
+        android:orientation="horizontal"
+        />
+    <!--  <android.support.constraint.Guideline
+          android:id="@+id/topOfTxtFName"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:layout_constraintGuide_percent="0.33"
+          android:orientation="horizontal"
+          />
+      <android.support.constraint.Guideline
+          android:id="@+id/topOfTxtLName"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:layout_constraintGuide_percent="0.35"
+          android:orientation="horizontal"
+          />
+      <android.support.constraint.Guideline
+          android:id="@+id/topOfTxtMobileNumber"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:layout_constraintGuide_percent="0.4"
+          android:orientation="horizontal"
+          />
+      <android.support.constraint.Guideline
+          android:id="@+id/topOfTxtRole"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:layout_constraintGuide_percent="0.45"
+          android:orientation="horizontal"
+          />-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rightOfTexts"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.05"
+        android:orientation="vertical"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rightOfPicture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.36"
+        android:orientation="vertical"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftOfPicture"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.7"
+        android:orientation="vertical"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/centerVertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintGuide_percent="0.57"
+        android:orientation="vertical"
+        />
+
+
+
+
+
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgProfilePic"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        bind:postImageUrl="@{userProfileVM.userImageURI}"
+        android:background="@drawable/circle"
+        app:layout_constraintBottom_toTopOf="@+id/bottomOfPicture"
+        app:layout_constraintEnd_toEndOf="@+id/leftOfPicture"
+        app:layout_constraintStart_toStartOf="@+id/rightOfPicture"
+        app:layout_constraintTop_toTopOf="@+id/topOfPicture"
+        android:elevation="15dp"
+         />
+
+
+    <TextView
+        android:id="@+id/txtFNameConstant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textSize="@dimen/_15ssp"
+        android:text="@string/name"
+        android:textColor="@color/black"
+        app:textviewfont="@{`faNumRegular`}"
+        app:layout_constraintStart_toStartOf="@id/rightOfTexts"
+        app:layout_constraintTop_toTopOf="@+id/bottomOfPicture" />
+
+    <TextView
+        android:id="@+id/txtLNameConstant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textSize="@dimen/_15ssp"
+        android:text="@string/group_name"
+        android:textColor="@color/black"
+        app:textviewfont="@{`faNumRegular`}"
+        app:layout_constraintStart_toStartOf="@id/rightOfTexts"
+        app:layout_constraintTop_toBottomOf="@+id/txtFNameConstant"  />
+
+    <TextView
+        android:id="@+id/txtMobileNumberConstant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textSize="@dimen/_15ssp"
+        android:text="@string/mobile_number"
+        android:textColor="@color/black"
+        app:textviewfont="@{`faNumRegular`}"
+        app:layout_constraintStart_toStartOf="@id/rightOfTexts"
+        app:layout_constraintTop_toBottomOf="@+id/txtLNameConstant"  />
+
+
+    <TextView
+        android:id="@+id/txtRoleConstant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textSize="@dimen/_15ssp"
+        android:text="@string/role"
+        android:textColor="@color/black"
+        app:textviewfont="@{`faNumRegular`}"
+        app:layout_constraintStart_toStartOf="@id/rightOfTexts"
+        app:layout_constraintTop_toBottomOf="@+id/txtMobileNumberConstant"  />
+
+
+
+
+    <TextView
+        android:id="@+id/txtFName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textSize="@dimen/_15ssp"
+        android:text="@{userProfileVM.userName}"
+        android:textColor="@color/report_data_text_view"
+        app:textviewfont="@{`faNumRegular`}"
+        app:layout_constraintStart_toStartOf="@id/centerVertical"
+        app:layout_constraintTop_toTopOf="@+id/bottomOfPicture" />
+
+    <TextView
+        android:id="@+id/txtLName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textSize="@dimen/_15ssp"
+        android:text="@{userProfileVM.userGroup}"
+        android:textColor="@color/report_data_text_view"
+        app:textviewfont="@{`faNumRegular`}"
+        app:layout_constraintStart_toStartOf="@id/centerVertical"
+        app:layout_constraintTop_toBottomOf="@+id/txtFName"  />
+
+    <TextView
+        android:id="@+id/txtMobileNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textSize="@dimen/_15ssp"
+        android:text="@{userProfileVM.userMobileNumber}"
+        android:textColor="@color/report_data_text_view"
+        app:textviewfont="@{`faNumRegular`}"
+        app:layout_constraintStart_toStartOf="@id/centerVertical"
+        app:layout_constraintTop_toBottomOf="@+id/txtLName"  />
+
+
+    <TextView
+        android:id="@+id/txtRole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textSize="@dimen/_15ssp"
+        android:text="@{userProfileVM.userRole}"
+        android:textColor="@color/report_data_text_view"
+        app:textviewfont="@{`faNumRegular`}"
+        app:layout_constraintStart_toStartOf="@id/centerVertical"
+        app:layout_constraintTop_toBottomOf="@+id/txtMobileNumber"  />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

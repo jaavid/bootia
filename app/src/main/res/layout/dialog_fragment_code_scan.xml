@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="dialogVM"
+            type="com.controladad.boutia_pms.view_models.DialogVM"/>
+    </data>
+
+    <LinearLayout
+        android:layoutDirection="rtl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="16dp"
+            android:textSize="@dimen/_18ssp"
+            android:textColor="@color/white"
+            android:background="@color/colorPrimary"
+            app:textviewfont="@{`faNumRegular`}"
+            android:text="@{dialogVM.title}"/>
+
+        <TextView
+            android:text="@{dialogVM.text}"
+            android:layout_width="match_parent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp"
+            android:padding="8dp"
+            app:textviewfont="@{`faNumRegular`}"
+            android:layout_height="wrap_content" />
+
+        <RadioGroup
+            android:visibility="@{dialogVM.radioGroupVisibility}"
+            android:onCheckedChanged="@{dialogVM.onCheckedChanged()}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/first_check_box"
+                android:text="@{dialogVM.firstCheckBoxText}"
+                android:layout_width="wrap_content"
+                app:textviewfont="@{`faNumRegular`}"
+                android:layout_height="wrap_content" />
+            <RadioButton
+                android:id="@+id/second_check_box"
+                android:text="@{dialogVM.secondCheckBoxText}"
+                android:layout_width="wrap_content"
+                app:textviewfont="@{`faNumRegular`}"
+                android:layout_height="wrap_content" />
+        </RadioGroup>
+
+        <EditText
+            android:text="@={dialogVM.description}"
+            android:visibility="@{dialogVM.radioGroupVisibility}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_number_background"
+            android:padding="8dp"
+            android:textSize="@dimen/_13ssp"
+            app:textviewfont="@{`faNumRegular`}"
+            android:layout_margin="20dp"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--<Button
+                android:layout_width="198dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="76dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/background_gradient_orange_yellow"
+                android:onClick="@{dialogVM.onUpButtonClicked()}"
+                android:text="@{dialogVM.upButtonText}"
+                android:visibility="@{dialogVM.upButtonVisibility}"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:textviewfont="@{`faNumRegular`}" />-->
+
+            <Button
+                android:layout_width="201dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/background_gradient_orange_yellow"
+                android:onClick="@{dialogVM.onButtonClicked()}"
+                android:text="@{dialogVM.buttonText}"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:textviewfont="@{`faNumRegular`}" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+</layout>

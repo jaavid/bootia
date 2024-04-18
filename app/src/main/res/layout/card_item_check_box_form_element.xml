@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="checkBoxDataModel"
+            type="com.controladad.boutia_pms.view_models.items_view_models.CheckBoxDataModel"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layoutDirection="rtl">
+        <cn.refactor.library.SmoothCheckBox
+                android:id="@+id/scb"
+                smooth_check_box="@{checkBoxDataModel.onCheckedChangeListener}"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:onClick="@{checkBoxDataModel.onClickListener()}"
+                android:checked="@{checkBoxDataModel.isUserSelected}"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                app:color_checked="@color/colorAccent"
+                />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:onClick="@{checkBoxDataModel.onTextClicked()}"
+            android:layout_height="wrap_content"
+            android:paddingRight="16dp"
+            android:paddingTop="4dp"
+            android:textSize="@dimen/_14ssp"
+            android:textColor="@color/black"
+            app:textviewfont="@{`faNumRegular`}"
+            android:text="@{checkBoxDataModel.text}"
+            />
+    </LinearLayout>
+</layout>

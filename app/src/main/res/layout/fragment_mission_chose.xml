@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="missionChoseVM"
+            type="com.controladad.boutia_pms.view_models.MissionChoseVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="rtl"
+        >
+        <!--horizontal-->
+
+        <EditText
+            android:id="@+id/txt_mission_name"
+            android:hint="@string/search_by_name"
+            android:text="@={missionChoseVM.nameSearchBoxInput}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            app:textviewfont="@{`faNumRegular`}"
+            android:textSize="@dimen/_13ssp"
+            android:textColor="@color/black"
+            android:layout_margin="8dp"
+            android:padding="8dp"
+            android:background="@drawable/hint_dialog_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutFilterContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_mission_name"
+            >
+
+            <EditText
+                android:id="@+id/txt_group_name"
+                android:hint="@string/search_by_group_code"
+                android:text="@={missionChoseVM.groupSearchBoxInput}"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                app:textviewfont="@{`faNumRegular`}"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/black"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:background="@drawable/hint_dialog_background"
+
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <EditText
+                android:id="@+id/txt_dispatching_name"
+                android:hint="@string/search_by_dispatching_code"
+                android:text="@={missionChoseVM.dispatchingSearchBoxInput}"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                app:textviewfont="@{`faNumRegular`}"
+                android:textSize="@dimen/_13ssp"
+                android:textColor="@color/black"
+                android:layout_margin="8dp"
+                android:padding="8dp"
+                android:background="@drawable/hint_dialog_background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+        </LinearLayout>
+
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabSelectedTextColor="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@id/linearLayoutFilterContainer"
+            app:layout_constraintBottom_toTopOf="@+id/statefulRecyclerView">
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/in_progress" />
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/past" />
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/future" />
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/all" />
+        </com.google.android.material.tabs.TabLayout>
+
+        <com.controladad.boutia_pms.adapters.StatefulRecyclerView
+            android:id="@+id/statefulRecyclerView"
+            style="@style/scrollbar_shape_style"
+            adapter_vertical="@{missionChoseVM.adapter}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="8dp"
+            android:fadeScrollbars="false"
+            android:paddingEnd="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tab_layout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

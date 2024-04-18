@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="hintVM"
+            type="com.controladad.boutia_pms.view_models.HintVM" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="#B3000000"
+        android:layoutDirection="rtl">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/top_of_scroll_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottom_of_scroll_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_of_scroll_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_of_scroll_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/scroll_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/hint_dialog_background"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_of_scroll_view"
+            app:layout_constraintEnd_toStartOf="@+id/left_of_scroll_view"
+            app:layout_constraintStart_toStartOf="@+id/right_of_scroll_view"
+            app:layout_constraintTop_toTopOf="@+id/top_of_scroll_view">
+
+
+            <ScrollView
+                android:id="@+id/scrollView2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+
+                android:layout_marginTop="8dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/ok_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@{hintVM.hintText}"
+                    android:padding = "16dp"
+                    android:textColor="@color/gray_border"
+                    android:textSize="@dimen/_13ssp"
+                    app:textviewfont="@{`faNumRegular`}" />
+
+
+            </ScrollView>
+
+            <Button
+                android:id="@+id/ok_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/background_gradient_orange_yellow"
+                android:onClick="@{hintVM.onClickListener()}"
+                android:text="@string/ok_and_continue"
+                android:drawablePadding="8dp"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:textviewfont="@{`faNumRegular`}" />
+            <!--                android:drawableStart="@drawable/ic_forward"
+-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

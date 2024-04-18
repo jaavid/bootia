@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="singleButtonDataModel"
+            type="com.controladad.boutia_pms.view_models.items_view_models.SingleButtonDataModel"/>
+    </data>
+
+   <!-- <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="rtl"
+        >
+
+        &lt;!&ndash;horizontal&ndash;&gt;
+        <android.support.constraint.Guideline
+            android:id="@+id/topOfTxtMissionChose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.02" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/bottomOfTxtMissionChose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.10" />
+
+
+
+
+        <android.support.constraint.Guideline
+            android:id="@+id/leftOfSubmitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/rightOfSubmitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"/>
+        <Button
+            android:id="@+id/btnSubmitSingle"
+            app:textviewfont="@{`faNumRegular`}"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:onClick="@{singleButtonDataModel.buttonClicked}"
+            android:layout_margin="10dp"
+            android:background="@drawable/background_gradient_orange_yellow"
+            android:text="@{singleButtonDataModel.buttonText}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomOfTxtMissionChose"
+            app:layout_constraintStart_toEndOf="@+id/rightOfSubmitButton"
+            app:layout_constraintEnd_toStartOf="@+id/leftOfSubmitButton"
+            app:layout_constraintTop_toTopOf="@+id/topOfTxtMissionChose" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"/>
+    </LinearLayout>
+
+
+ <!--   </android.support.constraint.ConstraintLayout>-->
+</layout>

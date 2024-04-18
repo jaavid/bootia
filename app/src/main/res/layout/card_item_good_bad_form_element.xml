@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="goodBadDataModel"
+            type="com.controladad.boutia_pms.view_models.items_view_models.GoodBadDataModel"/>
+    </data>
+
+    <LinearLayout
+        android:layoutDirection="rtl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layoutDirection="rtl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/leftOfIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.97" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/leftOfBadItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.9" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/leftOfGoodItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.7" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/leftOfTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.35" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/RightOfTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.02" />
+
+            <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+            <!--android:id="@+id/good_bad_container"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layoutDirection="rtl"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:weightSum="1"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="@+id/topOfTxtMissionChose"-->
+            <!--app:layout_constraintTop_toTopOf="parent">-->
+
+
+            <RadioGroup
+                android:id="@+id/radio_group_good_bad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/leftOfBadItem"
+                app:layout_constraintStart_toStartOf="@+id/leftOfTitle"
+
+                app:layout_constraintTop_toTopOf="parent">
+
+                <RadioButton
+                    android:id="@+id/radio_good"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{goodBadDataModel.onGoodClickListener()}"
+                    android:text="@{goodBadDataModel.goodButtonText}"
+
+                    android:textSize="@dimen/_15ssp"
+                    app:textviewfont="@{`faNumRegular`}" />
+
+                <RadioButton
+                    android:id="@+id/radio_bad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="24dp"
+                    android:onClick="@{goodBadDataModel.onBadClickListener()}"
+                    android:text="@{goodBadDataModel.badButtonText}"
+                    android:textSize="@dimen/_15ssp"
+                    app:textviewfont="@{`faNumRegular`}" />
+            </RadioGroup>
+
+
+            <com.controladad.boutia_pms.adapters.anims.ExpandableItemIndicator
+                android:id="@+id/indicator"
+                animate_expandable="@{goodBadDataModel.animate}"
+                expanded_expandable="@{goodBadDataModel.expanded}"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:layoutDirection="rtl"
+                android:onClick="@{goodBadDataModel.onExpandingClicked()}"
+                android:visibility="@{goodBadDataModel.expandingItemVisibility}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/leftOfBadItem"
+                app:layout_constraintEnd_toEndOf="@+id/leftOfBadItem"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_good_bad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"
+                android:text="@{goodBadDataModel.itemTitle}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/leftOfTitle"
+                app:layout_constraintStart_toEndOf="@+id/RightOfTitle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textviewfont="@{`faNumRegular`}" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorAccent"/>
+    </LinearLayout>
+</layout>

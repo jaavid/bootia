@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="segmentedControlDataModel"
+            type="com.controladad.boutia_pms.view_models.items_view_models.SegmentedControlDataModel"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"
+        android:orientation="horizontal"
+        android:layoutDirection="rtl"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:text="@{segmentedControlDataModel.title}"
+            android:layout_margin="10dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp"
+            app:textviewfont="@{`faNumRegular`}"
+            />
+
+
+        <info.hoang8f.android.segmented.SegmentedGroup
+
+            android:id="@+id/fourSegmentedGroup"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
+            android:orientation="horizontal"
+            android:layoutDirection="ltr"
+            segmentedgroup:sc_border_width="2dp"
+            segmentedgroup:sc_corner_radius="10dp">
+
+            <RadioButton
+                android:id="@+id/second_box"
+                android:checked="@{segmentedControlDataModel.isSecondSegmentChecked}"
+                android:onClick="@{segmentedControlDataModel.onCheckedChanged()}"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                app:textviewfont="@{`faNumRegular`}"
+                android:textSize="@dimen/_13ssp"
+                android:text="@{segmentedControlDataModel.secondSegmentText}"
+                style="@style/RadioButton" />
+
+            <RadioButton
+                android:id="@+id/first_box"
+                android:checked="@{segmentedControlDataModel.isFirstSegmentChecked}"
+                android:onClick="@{segmentedControlDataModel.onCheckedChanged()}"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_height="match_parent"
+                app:textviewfont="@{`faNumRegular`}"
+                android:textSize="@dimen/_13ssp"
+                android:text="@{segmentedControlDataModel.firstSegmentText}"
+                style="@style/RadioButton" />
+
+
+        </info.hoang8f.android.segmented.SegmentedGroup>
+    </LinearLayout>
+</layout>

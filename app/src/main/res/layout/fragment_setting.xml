@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="settingVM"
+            type="com.controladad.boutia_pms.view_models.SettingVM"/>
+    </data>
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="@color/white"
+       android:orientation="vertical">
+
+       <Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:layout_margin="20dp"
+           android:background="@drawable/background_gradient_orange_yellow"
+           android:gravity="center"
+           android:onClick="@{settingVM.onHintButtonClicked()}"
+           android:padding="8dp"
+           android:text="@string/hint"
+           android:textColor="@color/white"
+           android:textSize="@dimen/_15ssp"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintHorizontal_bias="1.0"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintVertical_bias="0.412"
+           app:textviewfont="@{`faNumRegular`}" />
+
+       <Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:layout_margin="20dp"
+           android:layout_marginBottom="192dp"
+           android:layout_marginTop="8dp"
+           android:background="@drawable/background_gradient_purple_light_red"
+           android:gravity="center"
+           android:onClick="@{settingVM.onLogoutClicked()}"
+           android:padding="8dp"
+           android:text="@string/exit"
+           android:textColor="@color/white"
+           android:textSize="@dimen/_15ssp"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintHorizontal_bias="1.0"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintVertical_bias="0.579"
+           app:textviewfont="@{`faNumRegular`}" />
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item>
+        <shape
+            android:shape="rectangle">
+            <!-- Set the border color of your layout here -->
+            <stroke android:width="2dp" android:color="#6fb8d7" />
+            <solid android:color="#e9f4f9"/>
+
+        </shape>
+    </item>
+
+   <!-- &lt;!&ndash; This is for border bottom but
+    you can change this according to your need &ndash;&gt;
+    <item android:right="1dp" >
+        <shape
+            android:shape="rectangle">
+            &lt;!&ndash; Set the background color of your layout here &ndash;&gt;
+            <stroke android:width="1dp" android:color="#ffca00" />
+            <solid android:color="#fff6d8" />
+        </shape>
+    </item>-->
+
+</layer-list>

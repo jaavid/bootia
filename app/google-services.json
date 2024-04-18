@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1015792990774",
+    "firebase_url": "https://samanet-pms.firebaseio.com",
+    "project_id": "samanet-pms",
+    "storage_bucket": "samanet-pms.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1015792990774:android:22bd85769f004ca93cf697",
+        "android_client_info": {
+          "package_name": "com.controladad.boutia_pms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1015792990774-8fomd82g67h81uu0mg1jq8hegek2qe22.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8ElP3-ZecVtZ7eOj7dQHyBLc2mX9UZUw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1015792990774-8fomd82g67h81uu0mg1jq8hegek2qe22.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

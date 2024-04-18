@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="customEditTextDataModel"
+            type="com.controladad.boutia_pms.view_models.items_view_models.CustomEditTextDataModel"/>
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_input_layout_user_entry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:text_input_font="@{`faNumRegular`}"
+            android:hint="@{customEditTextDataModel.hintForEditText}"
+            android:textColorHint="@color/colorAccent"
+            android:background="@drawable/input_number_background"
+            >
+
+            <EditText
+                android:id="@+id/txt_input_user_entry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={customEditTextDataModel.txtUserDataEntry}"
+                app:textviewfont="@{`faNumRegular`}"
+                android:background="@color/white"
+                android:layout_margin="10dp"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

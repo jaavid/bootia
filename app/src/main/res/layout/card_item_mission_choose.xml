@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <import type="com.controladad.boutia_pms.utility.Constants"/>
+        <import type="androidx.core.content.ContextCompat"/>
+        <import type="com.controladad.boutia_pms.R"/>
+        <variable
+            name="viewModel"
+            type="com.controladad.boutia_pms.view_models.items_view_models.MissionsDataModel"/>
+    </data>
+
+    <androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp"
+        >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@{viewModel.vaziateTakhirTajil == Constants.ON_TIME? ContextCompat.getDrawable(context,R.drawable.ontime_mission_background):viewModel.vaziateTakhirTajil == Constants.TAJIL? ContextCompat.getDrawable(context,R.drawable.hurry_mission_background):ContextCompat.getDrawable(context,R.drawable.delay_mission_background)}"
+
+
+        android:layoutDirection="rtl">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:gravity="center"
+            android:background="@drawable/mission_choose_background"
+            android:text="@{viewModel.itemName}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:textviewfont="@{`faNumRegular`}" />
+
+        <TextView
+            android:id="@+id/dispatching_code_title_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp"
+            app:textviewfont="@{`faNumBold`}"
+            android:text="@string/circuits"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <TextView
+            android:id="@+id/dispatching_code_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@{viewModel.dispatchingCode}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:textviewfont="@{`faNumRegular`}"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dispatching_code_title_txt" />
+
+        <View
+            android:id="@+id/line_circuit_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintTop_toBottomOf="@+id/dispatching_code_txt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/group_code_title_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/group_code"
+            android:textColor="@color/black"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintTop_toBottomOf="@+id/line_circuit_divider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:textviewfont="@{`faNumBold`}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:textviewfont="@{`faNumRegular`}"
+            android:text="@{viewModel.groupCode}"
+            app:layout_constraintStart_toEndOf="@id/group_code_title_txt"
+            app:layout_constraintTop_toBottomOf="@+id/line_circuit_divider" />
+
+
+        <TextView
+            android:id="@+id/mission_type_title_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/mission_type"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp"
+            app:textviewfont="@{`faNumBold`}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/group_code_title_txt"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:textviewfont="@{`faNumRegular`}"
+            android:text="@{viewModel.missionType}"
+            app:layout_constraintStart_toEndOf="@id/mission_type_title_txt"
+            app:layout_constraintTop_toBottomOf="@+id/group_code_title_txt"
+            />
+
+        <View
+            android:id="@+id/line_type_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintTop_toBottomOf="@+id/mission_type_title_txt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <LinearLayout
+            android:id="@+id/mission_date_title_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_type_divider"
+            app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2.5"
+                android:text="@{viewModel.startDate}"
+                android:padding="4dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:textviewfont="@{`faNumBold`}"
+             />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="3.75"
+                android:text="@{viewModel.middleTextDescription()}"
+                android:padding="4dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:textviewfont="@{`faNumRegular`}"
+             />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimaryDark"/>
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="2.5"
+                android:padding="4dp"
+                android:gravity="center"
+                android:text="@{viewModel.endDate}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                app:textviewfont="@{`faNumRegular`}"
+              />
+        </LinearLayout>
+
+
+        <View
+            android:id="@+id/line_date_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:visibility="@{viewModel.updateVisibility}"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintTop_toBottomOf="@+id/mission_date_title_txt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <ProgressBar
+            android:id="@+id/progress_dakal_received"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progress="@{viewModel.progressPercent}"
+            android:visibility="@{viewModel.isLoading? View.VISIBLE:View.GONE}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:animateLayoutChanges="true"
+            android:max="100"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_update"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line_date_divider" />
+
+        <FrameLayout
+            android:visibility="@{viewModel.updateVisibility}"
+            android:id="@+id/btn_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line_date_divider">
+
+            <Button
+
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:padding="8dp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                app:textviewfont="@{`faNumRegular`}"
+                android:background="@{viewModel.state == Constants.READY_STATE? ContextCompat.getColor(context,R.color.colorAccent):viewModel.state == Constants.ERROR_STATE? ContextCompat.getColor(context,R.color.red_500):ContextCompat.getColor(context,R.color.green_500)}"
+                android:text="@{viewModel.state == Constants.READY_STATE? context.getString(R.string.update):viewModel.state == Constants.ERROR_STATE? context.getString(R.string.retry):context.getString(R.string.updated)}"
+                android:visibility="@{viewModel.isLoading? View.GONE:View.VISIBLE}"
+                android:onClick="@{viewModel.onClickListener}"/>
+
+            <ProgressBar
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:visibility="@{viewModel.isLoading? View.VISIBLE:View.INVISIBLE}"
+               />
+        </FrameLayout>
+
+        <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="1dp"-->
+            <!--android:background="@color/grey_700"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/mission_type_title_txt"-->
+            <!--/>-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

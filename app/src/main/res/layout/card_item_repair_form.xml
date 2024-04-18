@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="repairItemDataModel"
+            type="com.controladad.boutia_pms.view_models.items_view_models.RepairItemDataModel"/>
+    </data>
+    <LinearLayout
+        android:background="@color/white"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layoutDirection="rtl"
+        >
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_18ssp"
+            android:textAlignment="center"
+
+            android:padding="5dp"
+            android:text="@{repairItemDataModel.repairTitle}"
+            android:textColor="@color/colorPrimary"
+            app:textviewfont="@{`faNumRegular`}"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryDark"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_15ssp"
+            android:layout_margin = "8dp"
+            android:layoutDirection="rtl"
+            android:textColor="@color/black"
+            app:textviewfont="@{`faNumRegular`}"
+            android:text="@{repairItemDataModel.repairDescription}"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorAccent"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layoutDirection="rtl"
+
+            >
+            <cn.refactor.library.SmoothCheckBox
+                android:id="@+id/repairCheckBox"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:onClick="@{repairItemDataModel.onClickListener()}"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                app:color_checked="@color/colorAccent"
+                />
+
+            <TextView
+                android:onClick="@{repairItemDataModel.onClickListener()}"
+                android:layout_width="0dp"
+                android:layout_weight="0.9"
+                android:paddingRight="16dp"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/_14ssp"
+                android:textColor="@color/black"
+                app:textviewfont="@{`faNumRegular`}"
+                android:text="@string/done"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:textviewfont="@{`faNumRegular`}"
+                android:background="@drawable/input_number_background"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:hint="@string/tozihat"
+                android:paddingStart="4dp"
+                android:lines="2"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                android:text="@={repairItemDataModel.userDescription}"
+                />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryDark"
+            />
+
+    </LinearLayout>
+</layout>

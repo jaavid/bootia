@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="com.controladad.boutia_pms.view_models.RepairTypeChoseVM"/>
+    </data>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+	    <LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:layoutDirection="rtl"
+		    android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/typeGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:layoutDirection="rtl">
+
+                <RadioButton
+                    android:id="@+id/radio_routine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    textviewfont="@{`faNumRegular`}"
+                    android:textSize="@dimen/_16ssp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/routine" />
+
+                <RadioButton
+                    android:id="@+id/radio_pahpad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    textviewfont="@{`faNumRegular`}"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="@dimen/_16ssp"
+                    android:text="@string/pahpad" />
+
+                <RadioButton
+                    android:id="@+id/radio_goroh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    textviewfont="@{`faNumRegular`}"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="@dimen/_16ssp"
+                    android:text="@string/goroh" />
+
+                <RadioButton
+                    android:id="@+id/radio_khodro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    textviewfont="@{`faNumRegular`}"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="@dimen/_16ssp"
+                    android:text="@string/khodro"/>
+
+                <RadioButton
+                    android:id="@+id/radio_karshenas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    textviewfont="@{`faNumRegular`}"
+                    android:textSize="@dimen/_16ssp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/karshenas"/>
+
+
+                <RadioButton
+                    android:id="@+id/radio_harim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    textviewfont="@{`faNumRegular`}"
+                    android:textSize="@dimen/_16ssp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/harim" />
+
+                <RadioButton
+                    android:id="@+id/radio_tahvil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    textviewfont="@{`faNumRegular`}"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="@dimen/_16ssp"
+                    android:text="@string/tahvil" />
+
+                <RadioButton
+                    android:id="@+id/radio_khas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    textviewfont="@{`faNumRegular`}"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="@dimen/_16ssp"
+                    android:text="@string/khas" />
+
+                <RadioButton
+                    android:id="@+id/radio_termo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    textviewfont="@{`faNumRegular`}"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textSize="@dimen/_16ssp"
+                    android:text="@string/termo" />
+
+                <RadioButton
+                    android:id="@+id/radio_zamin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    textviewfont="@{`faNumRegular`}"
+                    android:textSize="@dimen/_16ssp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/zamin" />
+
+            </RadioGroup>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSubmitMissionChose"
+            android:layout_gravity="center"
+            android:background="@drawable/background_gradient_orange_yellow"
+            android:textColor="@color/white"
+            android:text="@string/ok_and_continue"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            textviewfont="@{`faNumRegular`}"
+            android:layout_marginBottom="24dp"
+            android:onClick="@{viewModel.onNextButtonClicked()}"
+            android:textSize="@dimen/_19ssp"/>
+<!--                android:drawableStart="@drawable/ic_forward"
+-->
+    </LinearLayout>
+    </ScrollView>
+</layout>

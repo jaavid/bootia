@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="driverVM"
+            type="com.controladad.boutia_pms.view_models.DriverVM"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:text="@{driverVM.trackCountText}"
+            android:gravity="center"
+            app:textviewfont="@{`faNumRegular`}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/txt_description"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/txt_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:hint="@string/description"
+            android:lines="4"
+            android:padding="8dp"
+            android:background="@drawable/input_number_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:textviewfont="@{`faNumRegular`}"
+            android:text="@={driverVM.description}"
+            android:gravity="top"
+            android:visibility="@{driverVM.descriptionEditTextVisibility}"/>
+
+
+        <Button
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:textviewfont="@{`faNumRegular`}"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:onClick="@{driverVM.onFinishClicked()}"
+            android:background="@drawable/background_gradient_orange_yellow"
+            android:textColor="@color/white"
+            android:text="@string/mission_finish"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_description" />
+        <!-- background_gradient_purple_light_red-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

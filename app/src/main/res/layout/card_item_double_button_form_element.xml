@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="doubleButtonDataModel"
+            type="com.controladad.boutia_pms.view_models.items_view_models.DoubleButtonDataModel"/>
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSubmitDouble"
+            app:textviewfont="@{`faNumRegular`}"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/background_gradient_orange_yellow"
+            android:text="@{doubleButtonDataModel.strSubmitButtonTextDouble}"
+            android:onClick="@{doubleButtonDataModel.buttonSubmitClicked}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp"
+            />
+
+        <Button
+            android:id="@+id/btnAddDouble"
+            app:textviewfont="@{`faNumRegular`}"
+            android:layout_width="0dp"
+            android:layout_weight="0.5"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/background_gradient_purple_light_red"
+            android:text="@{doubleButtonDataModel.strAddButtonTextDouble}"
+            android:onClick="@{doubleButtonDataModel.buttonAddClicked}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15ssp"
+            />
+
+
+
+ <!--   </android.support.constraint.ConstraintLayout>-->
+    </LinearLayout>
+</layout>

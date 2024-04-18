@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="segmentedControlDataModel"
+            type="com.controladad.boutia_pms.view_models.items_view_models.SegmentedControlDataModel"/>
+    </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="right"
+    android:orientation="vertical"
+    android:layoutDirection="ltr"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{segmentedControlDataModel.title}"
+        android:layout_margin="10dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_15ssp"
+        app:textviewfont="@{`faNumRegular`}"
+        />
+
+        <info.hoang8f.android.segmented.SegmentedGroup
+            android:id="@+id/fiveSegmentedGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:orientation="horizontal"
+            segmentedgroup:layout_constraintEnd_toStartOf="@+id/rightOfFifth"
+            segmentedgroup:layout_constraintStart_toStartOf="@+id/topOfTxtMissionChose"
+            segmentedgroup:layout_constraintTop_toTopOf="parent"
+            segmentedgroup:sc_border_width="2dp"
+            segmentedgroup:sc_corner_radius="10dp">
+
+
+            <RadioButton
+                android:id="@+id/fifth_box"
+                android:checked="@{segmentedControlDataModel.isFifthSegmentChecked}"
+                android:onClick="@{segmentedControlDataModel.onCheckedChanged()}"
+                style="@style/RadioButton"
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:textSize="@dimen/_13ssp"
+                android:layout_height="match_parent"
+                android:text="@{segmentedControlDataModel.fifthSegmentText}"
+                app:textviewfont="@{`faNumRegular`}" />
+
+            <RadioButton
+                android:id="@+id/fourth_box"
+                android:checked="@{segmentedControlDataModel.isFourthSegmentChecked}"
+                android:onClick="@{segmentedControlDataModel.onCheckedChanged()}"
+                style="@style/RadioButton"
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:textSize="@dimen/_13ssp"
+                android:layout_height="match_parent"
+                android:text="@{segmentedControlDataModel.fourthSegmentText}"
+                app:textviewfont="@{`faNumRegular`}" />
+
+            <RadioButton
+                android:id="@+id/third_box"
+                android:checked="@{segmentedControlDataModel.isThirdSegmentChecked}"
+                android:onClick="@{segmentedControlDataModel.onCheckedChanged()}"
+                style="@style/RadioButton"
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:textSize="@dimen/_13ssp"
+                android:layout_height="match_parent"
+                android:text="@{segmentedControlDataModel.thirdSegmentText}"
+                app:textviewfont="@{`faNumRegular`}" />
+
+            <RadioButton
+                android:id="@+id/second_box"
+                android:checked="@{segmentedControlDataModel.isSecondSegmentChecked}"
+                style="@style/RadioButton"
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:textSize="@dimen/_13ssp"
+                android:onClick="@{segmentedControlDataModel.onCheckedChanged()}"
+                android:layout_height="match_parent"
+                android:text="@{segmentedControlDataModel.secondSegmentText}"
+                app:textviewfont="@{`faNumRegular`}" />
+
+            <RadioButton
+                android:id="@+id/first_box"
+                android:checked="@{segmentedControlDataModel.isFirstSegmentChecked}"
+                style="@style/RadioButton"
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:textSize="@dimen/_13ssp"
+                android:layout_height="match_parent"
+                android:onClick="@{segmentedControlDataModel.onCheckedChanged()}"
+                android:text="@{segmentedControlDataModel.firstSegmentText}"
+                app:textviewfont="@{`faNumRegular`}" />
+
+
+        </info.hoang8f.android.segmented.SegmentedGroup>
+    <!--</android.support.constraint.ConstraintLayout>-->
+</LinearLayout>
+</layout>

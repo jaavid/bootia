@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="reportVM"
+            type="com.controladad.boutia_pms.view_models.ReportVM"/>
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/noting_to_show"
+            android:visibility="@{reportVM.textVisibility}"
+            android:textSize="@dimen/_15ssp"
+            android:layout_margin="20dp"
+            app:textviewfont="@{`faNumRegular`}"
+            android:gravity="center"
+            android:layout_gravity="center"
+            />
+        <com.controladad.boutia_pms.adapters.StatefulRecyclerView
+            adapter_vertical="@{reportVM.adapter}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+</layout>

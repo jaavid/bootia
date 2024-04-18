@@ -1,0 +1,2022 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:segmentedgroup="http://schemas.android.com/tools">
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layoutDirection="rtl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txt_hadi_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:gravity="center"
+                android:background="@drawable/mission_choose_background"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textviewfont="@{`faNumRegular`}" />
+
+            <LinearLayout
+                android:id="@+id/segmented_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="vertical"
+                android:layoutDirection="ltr"
+                app:layout_constraintTop_toBottomOf="@id/txt_hadi_title"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/a"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp"
+                    app:textviewfont="@{`faNumRegular`}"
+                    />
+
+
+                <info.hoang8f.android.segmented.SegmentedGroup
+
+                    android:id="@+id/fourSegmentedGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    segmentedgroup:sc_border_width="2dp"
+                    segmentedgroup:sc_corner_radius="10dp">
+
+                    <RadioButton
+                        android:id="@+id/fourth_box"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="match_parent"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:textSize="@dimen/_13ssp"
+                        android:text="@string/tarkibi"
+                        style="@style/RadioButton" />
+
+                    <RadioButton
+                        android:id="@+id/third_box"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/_13ssp"
+                        android:text="@string/silicon"
+                        app:textviewfont="@{`faNumRegular`}"
+                        style="@style/RadioButton" />
+
+                    <RadioButton
+                        android:id="@+id/second_box"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/_13ssp"
+                        android:text="@string/shisheyi"
+                        app:textviewfont="@{`faNumRegular`}"
+                        style="@style/RadioButton" />
+
+                    <RadioButton
+                        android:id="@+id/first_box"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="match_parent"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:textSize="@dimen/_13ssp"
+                        android:text="@string/seramiki"
+                        style="@style/RadioButton" />
+
+
+
+                </info.hoang8f.android.segmented.SegmentedGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearlayout_good_bad"
+                app:layout_constraintTop_toBottomOf="@id/segmented_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layoutDirection="rtl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/leftOfIndicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.03" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/leftOfBadItem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.1" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/leftOfGoodItem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.3" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/leftOfTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.65" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/RightOfTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.98" />
+
+                    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+                    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                    <!--android:id="@+id/good_bad_container"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layoutDirection="rtl"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:weightSum="1"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--app:layout_constraintStart_toStartOf="@+id/topOfTxtMissionChose"-->
+                    <!--app:layout_constraintTop_toTopOf="parent">-->
+
+
+                    <RadioGroup
+                        android:id="@+id/radio_group_good_bad"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp"
+                        android:textSize="@dimen/_15ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/leftOfBadItem"
+                        app:layout_constraintStart_toStartOf="@+id/leftOfTitle"
+
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/radio_good"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/good"
+                            android:textSize="@dimen/_15ssp"
+                            app:textviewfont="@{`faNumRegular`}" />
+
+                        <RadioButton
+                            android:id="@+id/radio_bad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="24dp"
+                            android:text="@string/bad"
+                            android:textSize="@dimen/_15ssp"
+                            app:textviewfont="@{`faNumRegular`}" />
+                    </RadioGroup>
+
+
+                    <com.controladad.boutia_pms.adapters.anims.ExpandableItemIndicator
+                        android:id="@+id/indicator"
+
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="8dp"
+                        android:layoutDirection="rtl"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/leftOfBadItem"
+                        app:layout_constraintStart_toStartOf="@+id/leftOfIndicator"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorAccent"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearlayout_good_bad_a_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/linearlayout_good_bad">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/iradate_maghare_va_molhaghat"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_15ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:textviewfont="@{`faNumRegular`}" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layoutDirection="rtl"
+                    android:weightSum="1"
+                    >
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl"
+                        >
+                        <cn.refactor.library.SmoothCheckBox
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            app:color_checked="@color/colorAccent"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.9"
+                            android:paddingRight="16dp"
+                            android:text="@string/ofset"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_14ssp"
+                            android:textColor="@color/black"
+                            app:textviewfont="@{`faNumRegular`}"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl"
+                        >
+                        <cn.refactor.library.SmoothCheckBox
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            app:color_checked="@color/colorAccent"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.9"
+                            android:paddingRight="16dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_14ssp"
+                            android:textColor="@color/black"
+                            android:text="@string/lab_paridegi"
+                            app:textviewfont="@{`faNumRegular`}"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layoutDirection="rtl"
+                    android:weightSum="1"
+                    >
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl"
+                        >
+                        <cn.refactor.library.SmoothCheckBox
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            app:color_checked="@color/colorAccent"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.9"
+                            android:text="@string/kaj_bodan_zanjir"
+                            android:paddingRight="16dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_14ssp"
+                            android:textColor="@color/black"
+                            app:textviewfont="@{`faNumRegular`}"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl"
+                        >
+                        <cn.refactor.library.SmoothCheckBox
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            app:color_checked="@color/colorAccent"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.9"
+                            android:paddingRight="16dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nadashtan_eshpil"
+                            android:textSize="@dimen/_14ssp"
+                            android:textColor="@color/black"
+                            app:textviewfont="@{`faNumRegular`}"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layoutDirection="rtl"
+                    android:weightSum="1"
+                    >
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl"
+                        >
+                        <cn.refactor.library.SmoothCheckBox
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            app:color_checked="@color/colorAccent"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.9"
+                            android:paddingRight="16dp"
+                            android:text="@string/nadashtan_pich_mohre"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_14ssp"
+                            android:textColor="@color/black"
+                            app:textviewfont="@{`faNumRegular`}"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl"
+                        >
+                        <cn.refactor.library.SmoothCheckBox
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            app:color_checked="@color/colorAccent"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.9"
+                            android:paddingRight="16dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_14ssp"
+                            android:textColor="@color/black"
+                            android:text="@string/dar_hale_biron_amadan_az_pin_maghare"
+                            app:textviewfont="@{`faNumRegular`}"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layoutDirection="rtl">
+                    <cn.refactor.library.SmoothCheckBox
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        app:color_checked="@color/colorAccent"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="16dp"
+                        android:paddingTop="4dp"
+                        android:textSize="@dimen/_14ssp"
+                        android:textColor="@color/black"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:text="@string/alodegi"
+                        />
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:text_input_font="@{`faNumRegular`}"
+                    android:hint="@string/darsade_aloodegi"
+                    android:textColorHint="@color/colorAccent"
+                    android:background="@drawable/input_number_background"
+                    >
+
+                    <EditText
+                        android:id="@+id/txt_input_user_entry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:background="@color/white"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/colorAccent"
+                        android:textColorHint="@color/colorAccent" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:layoutDirection="rtl"
+                    >
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.3"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/noe_asib_maghare"
+                        android:textSize="@dimen/_15ssp"
+                        app:textviewfont="@{`faNumRegular`}"
+                        />
+
+
+                    <info.hoang8f.android.segmented.SegmentedGroup
+
+                        android:layout_width="0dp"
+                        android:layout_weight="0.7"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+
+                        android:orientation="horizontal"
+                        android:layoutDirection="ltr"
+
+                        segmentedgroup:sc_border_width="2dp"
+                        segmentedgroup:sc_corner_radius="10dp">
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/_13ssp"
+                            app:textviewfont="@{`faNumRegular`}"
+                            android:text="@string/sokhtegi"
+                            style="@style/RadioButton" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/_13ssp"
+                            android:text="@string/shekastegi"
+                            app:textviewfont="@{`faNumRegular`}"
+                            style="@style/RadioButton" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="match_parent"
+                            app:textviewfont="@{`faNumRegular`}"
+                            android:textSize="@dimen/_13ssp"
+                            android:text="@string/nadarad"
+                            style="@style/RadioButton" />
+
+
+
+                    </info.hoang8f.android.segmented.SegmentedGroup>
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:text_input_font="@{`faNumRegular`}"
+                    android:hint="@string/tedad"
+                    android:textColorHint="@color/colorAccent"
+                    android:background="@drawable/input_number_background"
+                    >
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:background="@color/white"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/colorAccent"
+                        android:textColorHint="@color/colorAccent" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:layoutDirection="rtl"
+                    >
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.3"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/kap_pin_maghare"
+                        android:textSize="@dimen/_15ssp"
+                        app:textviewfont="@{`faNumRegular`}"
+                        />
+
+
+                    <info.hoang8f.android.segmented.SegmentedGroup
+
+                        android:layout_width="0dp"
+                        android:layout_weight="0.7"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+
+                        android:orientation="horizontal"
+                        android:layoutDirection="ltr"
+
+                        segmentedgroup:sc_border_width="2dp"
+                        segmentedgroup:sc_corner_radius="10dp">
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/_13ssp"
+                            app:textviewfont="@{`faNumRegular`}"
+                            android:text="@string/zang_zadegi"
+                            style="@style/RadioButton" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/_13ssp"
+                            android:text="@string/khordegi"
+                            app:textviewfont="@{`faNumRegular`}"
+                            style="@style/RadioButton" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="match_parent"
+                            app:textviewfont="@{`faNumRegular`}"
+                            android:textSize="@dimen/_13ssp"
+                            android:text="@string/nadarad"
+                            style="@style/RadioButton" />
+
+
+
+                    </info.hoang8f.android.segmented.SegmentedGroup>
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:text_input_font="@{`faNumRegular`}"
+                    android:hint="@string/tozihat"
+                    android:textColorHint="@color/colorAccent"
+                    android:background="@drawable/input_number_background"
+                    >
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:background="@color/white"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/colorAccent"
+                        android:textColorHint="@color/colorAccent" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    >
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"/>
+                    <Button
+                        android:id="@+id/btnSubmitSingle"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/background_gradient_orange_yellow"
+                        android:text="@string/ok"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_15ssp"
+                        app:layout_constraintBottom_toTopOf="@+id/bottomOfTxtMissionChose"
+                        app:layout_constraintStart_toEndOf="@+id/rightOfSubmitButton"
+                        app:layout_constraintEnd_toStartOf="@+id/leftOfSubmitButton"
+                        app:layout_constraintTop_toTopOf="@+id/topOfTxtMissionChose" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+
+
+            <!--b-->
+            <LinearLayout
+                android:id="@+id/segmented_group_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="vertical"
+                android:layoutDirection="ltr"
+                app:layout_constraintTop_toBottomOf="@id/linearlayout_good_bad_a_content"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/a"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp"
+                    app:textviewfont="@{`faNumRegular`}"
+                    />
+
+
+                <info.hoang8f.android.segmented.SegmentedGroup
+
+                    android:id="@+id/fourSegmentedGroup_b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    segmentedgroup:sc_border_width="2dp"
+                    segmentedgroup:sc_corner_radius="10dp">
+
+                    <RadioButton
+                        android:id="@+id/fourth_box_b"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="match_parent"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:textSize="@dimen/_13ssp"
+                        android:text="@string/tarkibi"
+                        style="@style/RadioButton" />
+
+                    <RadioButton
+                        android:id="@+id/third_box_b"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/_13ssp"
+                        android:text="@string/silicon"
+                        app:textviewfont="@{`faNumRegular`}"
+                        style="@style/RadioButton" />
+
+                    <RadioButton
+                        android:id="@+id/second_box_b"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/_13ssp"
+                        android:text="@string/shisheyi"
+                        app:textviewfont="@{`faNumRegular`}"
+                        style="@style/RadioButton" />
+
+                    <RadioButton
+                        android:id="@+id/first_box_b"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="match_parent"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:textSize="@dimen/_13ssp"
+                        android:text="@string/seramiki"
+                        style="@style/RadioButton" />
+
+
+
+                </info.hoang8f.android.segmented.SegmentedGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearlayout_good_bad_b"
+                app:layout_constraintTop_toBottomOf="@id/segmented_group_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layoutDirection="rtl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/leftOfIndicator_b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.03" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/leftOfBadItem_b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.1" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/leftOfGoodItem_b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.3" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/leftOfTitle_b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.65" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/RightOfTitle_b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.98" />
+
+                    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+                    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                    <!--android:id="@+id/good_bad_container"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layoutDirection="rtl"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:weightSum="1"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--app:layout_constraintStart_toStartOf="@+id/topOfTxtMissionChose"-->
+                    <!--app:layout_constraintTop_toTopOf="parent">-->
+
+
+                    <RadioGroup
+                        android:id="@+id/radio_group_good_bad_b"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp"
+                        android:textSize="@dimen/_15ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/leftOfBadItem_b"
+                        app:layout_constraintStart_toStartOf="@+id/leftOfTitle_b"
+
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/radio_good_b"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/good"
+                            android:textSize="@dimen/_15ssp"
+                            app:textviewfont="@{`faNumRegular`}" />
+
+                        <RadioButton
+                            android:id="@+id/radio_bad_b"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="24dp"
+                            android:text="@string/bad"
+                            android:textSize="@dimen/_15ssp"
+                            app:textviewfont="@{`faNumRegular`}" />
+                    </RadioGroup>
+
+
+                    <com.controladad.boutia_pms.adapters.anims.ExpandableItemIndicator
+                        android:id="@+id/indicator_b"
+
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="8dp"
+                        android:layoutDirection="rtl"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/leftOfBadItem_b"
+                        app:layout_constraintStart_toStartOf="@+id/leftOfIndicator_b"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorAccent"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearlayout_good_bad_a_content_c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/linearlayout_good_bad_b">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/iradate_maghare_va_molhaghat"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_15ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:textviewfont="@{`faNumRegular`}" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layoutDirection="rtl"
+                    android:weightSum="1"
+                    >
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl"
+                        >
+                        <cn.refactor.library.SmoothCheckBox
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            app:color_checked="@color/colorAccent"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.9"
+                            android:paddingRight="16dp"
+                            android:text="@string/ofset"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_14ssp"
+                            android:textColor="@color/black"
+                            app:textviewfont="@{`faNumRegular`}"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl"
+                        >
+                        <cn.refactor.library.SmoothCheckBox
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            app:color_checked="@color/colorAccent"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.9"
+                            android:paddingRight="16dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_14ssp"
+                            android:textColor="@color/black"
+                            android:text="@string/lab_paridegi"
+                            app:textviewfont="@{`faNumRegular`}"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layoutDirection="rtl"
+                    android:weightSum="1"
+                    >
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl"
+                        >
+                        <cn.refactor.library.SmoothCheckBox
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            app:color_checked="@color/colorAccent"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.9"
+                            android:text="@string/kaj_bodan_zanjir"
+                            android:paddingRight="16dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_14ssp"
+                            android:textColor="@color/black"
+                            app:textviewfont="@{`faNumRegular`}"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl"
+                        >
+                        <cn.refactor.library.SmoothCheckBox
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            app:color_checked="@color/colorAccent"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.9"
+                            android:paddingRight="16dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nadashtan_eshpil"
+                            android:textSize="@dimen/_14ssp"
+                            android:textColor="@color/black"
+                            app:textviewfont="@{`faNumRegular`}"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layoutDirection="rtl"
+                    android:weightSum="1"
+                    >
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl"
+                        >
+                        <cn.refactor.library.SmoothCheckBox
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            app:color_checked="@color/colorAccent"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.9"
+                            android:paddingRight="16dp"
+                            android:text="@string/nadashtan_pich_mohre"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_14ssp"
+                            android:textColor="@color/black"
+                            app:textviewfont="@{`faNumRegular`}"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl"
+                        >
+                        <cn.refactor.library.SmoothCheckBox
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            app:color_checked="@color/colorAccent"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.9"
+                            android:paddingRight="16dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_14ssp"
+                            android:textColor="@color/black"
+                            android:text="@string/dar_hale_biron_amadan_az_pin_maghare"
+                            app:textviewfont="@{`faNumRegular`}"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layoutDirection="rtl">
+                    <cn.refactor.library.SmoothCheckBox
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        app:color_checked="@color/colorAccent"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="16dp"
+                        android:paddingTop="4dp"
+                        android:textSize="@dimen/_14ssp"
+                        android:textColor="@color/black"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:text="@string/alodegi"
+                        />
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:text_input_font="@{`faNumRegular`}"
+                    android:hint="@string/darsade_aloodegi"
+                    android:textColorHint="@color/colorAccent"
+                    android:background="@drawable/input_number_background"
+                    >
+
+                    <EditText
+                        android:id="@+id/txt_input_user_entry_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:background="@color/white"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/colorAccent"
+                        android:textColorHint="@color/colorAccent" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:layoutDirection="rtl"
+                    >
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.3"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/noe_asib_maghare"
+                        android:textSize="@dimen/_15ssp"
+                        app:textviewfont="@{`faNumRegular`}"
+                        />
+
+
+                    <info.hoang8f.android.segmented.SegmentedGroup
+
+                        android:layout_width="0dp"
+                        android:layout_weight="0.7"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+
+                        android:orientation="horizontal"
+                        android:layoutDirection="ltr"
+
+                        segmentedgroup:sc_border_width="2dp"
+                        segmentedgroup:sc_corner_radius="10dp">
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/_13ssp"
+                            app:textviewfont="@{`faNumRegular`}"
+                            android:text="@string/sokhtegi"
+                            style="@style/RadioButton" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/_13ssp"
+                            android:text="@string/shekastegi"
+                            app:textviewfont="@{`faNumRegular`}"
+                            style="@style/RadioButton" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="match_parent"
+                            app:textviewfont="@{`faNumRegular`}"
+                            android:textSize="@dimen/_13ssp"
+                            android:text="@string/nadarad"
+                            style="@style/RadioButton" />
+
+
+
+                    </info.hoang8f.android.segmented.SegmentedGroup>
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:text_input_font="@{`faNumRegular`}"
+                    android:hint="@string/tedad"
+                    android:textColorHint="@color/colorAccent"
+                    android:background="@drawable/input_number_background"
+                    >
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:background="@color/white"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/colorAccent"
+                        android:textColorHint="@color/colorAccent" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:layoutDirection="rtl"
+                    >
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.3"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/kap_pin_maghare"
+                        android:textSize="@dimen/_15ssp"
+                        app:textviewfont="@{`faNumRegular`}"
+                        />
+
+
+                    <info.hoang8f.android.segmented.SegmentedGroup
+
+                        android:layout_width="0dp"
+                        android:layout_weight="0.7"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+
+                        android:orientation="horizontal"
+                        android:layoutDirection="ltr"
+
+                        segmentedgroup:sc_border_width="2dp"
+                        segmentedgroup:sc_corner_radius="10dp">
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/_13ssp"
+                            app:textviewfont="@{`faNumRegular`}"
+                            android:text="@string/zang_zadegi"
+                            style="@style/RadioButton" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/_13ssp"
+                            android:text="@string/khordegi"
+                            app:textviewfont="@{`faNumRegular`}"
+                            style="@style/RadioButton" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="match_parent"
+                            app:textviewfont="@{`faNumRegular`}"
+                            android:textSize="@dimen/_13ssp"
+                            android:text="@string/nadarad"
+                            style="@style/RadioButton" />
+
+
+
+                    </info.hoang8f.android.segmented.SegmentedGroup>
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:text_input_font="@{`faNumRegular`}"
+                    android:hint="@string/tozihat"
+                    android:textColorHint="@color/colorAccent"
+                    android:background="@drawable/input_number_background"
+                    >
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:background="@color/white"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/colorAccent"
+                        android:textColorHint="@color/colorAccent" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    >
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"/>
+                    <Button
+                        android:id="@+id/btnSubmitSingle_b"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/background_gradient_orange_yellow"
+                        android:text="@string/ok"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_15ssp"
+                        app:layout_constraintBottom_toTopOf="@+id/bottomOfTxtMissionChose"
+                        app:layout_constraintStart_toEndOf="@+id/rightOfSubmitButton"
+                        app:layout_constraintEnd_toStartOf="@+id/leftOfSubmitButton"
+                        app:layout_constraintTop_toTopOf="@+id/topOfTxtMissionChose" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+            <!--c-->
+
+            <LinearLayout
+                android:id="@+id/segmented_group_c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="vertical"
+                android:layoutDirection="ltr"
+                app:layout_constraintTop_toBottomOf="@id/linearlayout_good_bad_a_content"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/a"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15ssp"
+                    app:textviewfont="@{`faNumRegular`}"
+                    />
+
+
+                <info.hoang8f.android.segmented.SegmentedGroup
+
+                    android:id="@+id/fourSegmentedGroup_c"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:orientation="horizontal"
+                    segmentedgroup:sc_border_width="2dp"
+                    segmentedgroup:sc_corner_radius="10dp">
+
+                    <RadioButton
+                        android:id="@+id/fourth_box_c"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="match_parent"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:textSize="@dimen/_13ssp"
+                        android:text="@string/tarkibi"
+                        style="@style/RadioButton" />
+
+                    <RadioButton
+                        android:id="@+id/third_box_c"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/_13ssp"
+                        android:text="@string/silicon"
+                        app:textviewfont="@{`faNumRegular`}"
+                        style="@style/RadioButton" />
+
+                    <RadioButton
+                        android:id="@+id/second_box_c"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="match_parent"
+                        android:textSize="@dimen/_13ssp"
+                        android:text="@string/shisheyi"
+                        app:textviewfont="@{`faNumRegular`}"
+                        style="@style/RadioButton" />
+
+                    <RadioButton
+                        android:id="@+id/first_box_c"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.25"
+                        android:layout_height="match_parent"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:textSize="@dimen/_13ssp"
+                        android:text="@string/seramiki"
+                        style="@style/RadioButton" />
+
+
+
+                </info.hoang8f.android.segmented.SegmentedGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearlayout_good_bad_c"
+                app:layout_constraintTop_toBottomOf="@id/segmented_group_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layoutDirection="rtl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/leftOfIndicator_c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.03" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/leftOfBadItem_c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.1" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/leftOfGoodItem_c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.3" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/leftOfTitle_c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.65" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/RightOfTitle_c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.98" />
+
+                    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+                    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+                    <!--android:id="@+id/good_bad_container"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layoutDirection="rtl"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:weightSum="1"-->
+                    <!--app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--app:layout_constraintStart_toStartOf="@+id/topOfTxtMissionChose"-->
+                    <!--app:layout_constraintTop_toTopOf="parent">-->
+
+
+                    <RadioGroup
+                        android:id="@+id/radio_group_good_bad_c"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp"
+                        android:textSize="@dimen/_15ssp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/leftOfBadItem_c"
+                        app:layout_constraintStart_toStartOf="@+id/leftOfTitle_c"
+
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <RadioButton
+                            android:id="@+id/radio_good_c"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/good"
+                            android:textSize="@dimen/_15ssp"
+                            app:textviewfont="@{`faNumRegular`}" />
+
+                        <RadioButton
+                            android:id="@+id/radio_bad_c"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="24dp"
+                            android:text="@string/bad"
+                            android:textSize="@dimen/_15ssp"
+                            app:textviewfont="@{`faNumRegular`}" />
+                    </RadioGroup>
+
+
+                    <com.controladad.boutia_pms.adapters.anims.ExpandableItemIndicator
+                        android:id="@+id/indicator_c"
+
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="8dp"
+                        android:layoutDirection="rtl"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/leftOfBadItem_c"
+                        app:layout_constraintStart_toStartOf="@+id/leftOfIndicator_c"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorAccent"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linearlayout_good_bad_a_content_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/linearlayout_good_bad_c">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/iradate_maghare_va_molhaghat"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_15ssp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:textviewfont="@{`faNumRegular`}" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layoutDirection="rtl"
+                    android:weightSum="1"
+                    >
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl"
+                        >
+                        <cn.refactor.library.SmoothCheckBox
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            app:color_checked="@color/colorAccent"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.9"
+                            android:paddingRight="16dp"
+                            android:text="@string/ofset"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_14ssp"
+                            android:textColor="@color/black"
+                            app:textviewfont="@{`faNumRegular`}"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl"
+                        >
+                        <cn.refactor.library.SmoothCheckBox
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            app:color_checked="@color/colorAccent"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.9"
+                            android:paddingRight="16dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_14ssp"
+                            android:textColor="@color/black"
+                            android:text="@string/lab_paridegi"
+                            app:textviewfont="@{`faNumRegular`}"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layoutDirection="rtl"
+                    android:weightSum="1"
+                    >
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl"
+                        >
+                        <cn.refactor.library.SmoothCheckBox
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            app:color_checked="@color/colorAccent"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.9"
+                            android:text="@string/kaj_bodan_zanjir"
+                            android:paddingRight="16dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_14ssp"
+                            android:textColor="@color/black"
+                            app:textviewfont="@{`faNumRegular`}"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl"
+                        >
+                        <cn.refactor.library.SmoothCheckBox
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            app:color_checked="@color/colorAccent"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.9"
+                            android:paddingRight="16dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/nadashtan_eshpil"
+                            android:textSize="@dimen/_14ssp"
+                            android:textColor="@color/black"
+                            app:textviewfont="@{`faNumRegular`}"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layoutDirection="rtl"
+                    android:weightSum="1"
+                    >
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl"
+                        >
+                        <cn.refactor.library.SmoothCheckBox
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            app:color_checked="@color/colorAccent"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.9"
+                            android:paddingRight="16dp"
+                            android:text="@string/nadashtan_pich_mohre"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_14ssp"
+                            android:textColor="@color/black"
+                            app:textviewfont="@{`faNumRegular`}"
+                            />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layoutDirection="rtl"
+                        >
+                        <cn.refactor.library.SmoothCheckBox
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="8dp"
+                            app:color_checked="@color/colorAccent"
+                            />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.9"
+                            android:paddingRight="16dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/_14ssp"
+                            android:textColor="@color/black"
+                            android:text="@string/dar_hale_biron_amadan_az_pin_maghare"
+                            app:textviewfont="@{`faNumRegular`}"
+                            />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layoutDirection="rtl">
+                    <cn.refactor.library.SmoothCheckBox
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        app:color_checked="@color/colorAccent"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="16dp"
+                        android:paddingTop="4dp"
+                        android:textSize="@dimen/_14ssp"
+                        android:textColor="@color/black"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:text="@string/alodegi"
+                        />
+
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:text_input_font="@{`faNumRegular`}"
+                    android:hint="@string/darsade_aloodegi"
+                    android:textColorHint="@color/colorAccent"
+                    android:background="@drawable/input_number_background"
+                    >
+
+                    <EditText
+                        android:id="@+id/txt_input_user_entry_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:background="@color/white"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/colorAccent"
+                        android:textColorHint="@color/colorAccent" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:layoutDirection="rtl"
+                    >
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.3"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/noe_asib_maghare"
+                        android:textSize="@dimen/_15ssp"
+                        app:textviewfont="@{`faNumRegular`}"
+                        />
+
+
+                    <info.hoang8f.android.segmented.SegmentedGroup
+
+                        android:layout_width="0dp"
+                        android:layout_weight="0.7"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+
+                        android:orientation="horizontal"
+                        android:layoutDirection="ltr"
+
+                        segmentedgroup:sc_border_width="2dp"
+                        segmentedgroup:sc_corner_radius="10dp">
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/_13ssp"
+                            app:textviewfont="@{`faNumRegular`}"
+                            android:text="@string/sokhtegi"
+                            style="@style/RadioButton" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/_13ssp"
+                            android:text="@string/shekastegi"
+                            app:textviewfont="@{`faNumRegular`}"
+                            style="@style/RadioButton" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="match_parent"
+                            app:textviewfont="@{`faNumRegular`}"
+                            android:textSize="@dimen/_13ssp"
+                            android:text="@string/nadarad"
+                            style="@style/RadioButton" />
+
+
+
+                    </info.hoang8f.android.segmented.SegmentedGroup>
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:text_input_font="@{`faNumRegular`}"
+                    android:hint="@string/tedad"
+                    android:textColorHint="@color/colorAccent"
+                    android:background="@drawable/input_number_background"
+                    >
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:background="@color/white"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/colorAccent"
+                        android:textColorHint="@color/colorAccent" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:orientation="horizontal"
+                    android:layoutDirection="rtl"
+                    >
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.3"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/kap_pin_maghare"
+                        android:textSize="@dimen/_15ssp"
+                        app:textviewfont="@{`faNumRegular`}"
+                        />
+
+
+                    <info.hoang8f.android.segmented.SegmentedGroup
+
+                        android:layout_width="0dp"
+                        android:layout_weight="0.7"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+
+                        android:orientation="horizontal"
+                        android:layoutDirection="ltr"
+
+                        segmentedgroup:sc_border_width="2dp"
+                        segmentedgroup:sc_corner_radius="10dp">
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/_13ssp"
+                            app:textviewfont="@{`faNumRegular`}"
+                            android:text="@string/zang_zadegi"
+                            style="@style/RadioButton" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="match_parent"
+                            android:textSize="@dimen/_13ssp"
+                            android:text="@string/khordegi"
+                            app:textviewfont="@{`faNumRegular`}"
+                            style="@style/RadioButton" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_weight="0.3"
+                            android:layout_height="match_parent"
+                            app:textviewfont="@{`faNumRegular`}"
+                            android:textSize="@dimen/_13ssp"
+                            android:text="@string/nadarad"
+                            style="@style/RadioButton" />
+
+
+
+                    </info.hoang8f.android.segmented.SegmentedGroup>
+                </LinearLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    app:text_input_font="@{`faNumRegular`}"
+                    android:hint="@string/tozihat"
+                    android:textColorHint="@color/colorAccent"
+                    android:background="@drawable/input_number_background"
+                    >
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:background="@color/white"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/colorAccent"
+                        android:textColorHint="@color/colorAccent" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    >
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"/>
+                    <Button
+                        android:id="@+id/btnSubmitSingle_c"
+                        app:textviewfont="@{`faNumRegular`}"
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/background_gradient_orange_yellow"
+                        android:text="@string/ok"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_15ssp"
+                        app:layout_constraintBottom_toTopOf="@+id/bottomOfTxtMissionChose"
+                        app:layout_constraintStart_toEndOf="@+id/rightOfSubmitButton"
+                        app:layout_constraintEnd_toStartOf="@+id/leftOfSubmitButton"
+                        app:layout_constraintTop_toTopOf="@+id/topOfTxtMissionChose" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="repairTowerChoseVM"
+            type="com.controladad.boutia_pms.view_models.RepairTowerChoseVM" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="rtl"
+        >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightOfFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfClearFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <!--horizontal-->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfTxtMissionChose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.02" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomOfTxtMissionChose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.12" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfEtMissionChose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.14" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomOfEtMissionChose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.24" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfTxtRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.26" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomOfTxtRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.36" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfEtRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.38" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomOfEtRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.48" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfTxtReviewDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.50" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomOfTxtReviewDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.60" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfEtReviewDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.62" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomOfEtReviewDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.72" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/topOfSubmitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.76" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottomOfSubmitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.84" />
+
+        <!--vertical-->
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightOfImageIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftOfImageIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.19" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightOfETs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.08" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftOfETs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.92" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightOfTxtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.21" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftOfSubmitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightOfSubmitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+
+        <ImageView
+            android:id="@+id/imgRepairTowerChoseIcon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:src="@drawable/ic_select_mission"
+            app:layout_constraintBottom_toTopOf="@+id/bottomOfTxtMissionChose"
+            app:layout_constraintEnd_toStartOf="@+id/leftOfImageIcon"
+            app:layout_constraintStart_toStartOf="@+id/rightOfImageIcon"
+            app:layout_constraintTop_toTopOf="@+id/topOfTxtMissionChose" />
+
+        <TextView
+            android:id="@+id/constRepairTextTowerChose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:textviewfont="@{`faNumRegular`}"
+            android:text="@string/repair_tower_mission_chose"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomOfTxtMissionChose"
+            app:layout_constraintStart_toEndOf="@+id/rightOfTxtTitle"
+            app:layout_constraintTop_toTopOf="@+id/topOfTxtMissionChose" />
+
+
+        <!--<gr.escsoft.michaelprimez.searchablespinner.SearchableSpinner-->
+            <!--android:id="@+id/SearchableSpinnerRepairTowerChose"-->
+
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="0dp"-->
+            <!--android:background="@drawable/border_right"-->
+            <!--android:gravity="center_horizontal"-->
+            <!--app:DoneSearchTintColor="@color/colorAccentSpinner"-->
+            <!--app:RevealEmptyText="@string/repair_tower_mission_chose"-->
+
+            <!--app:SearchViewTextColor="@color/text_view_search_color"-->
+            <!--app:RevealViewBackgroundColor="@color/light_orange"-->
+            <!--app:SearchViewBackgroundColor="@color/light_orange"-->
+            <!--android:textSize="@dimen/_15ssp"-->
+            <!--app:StartSearchTintColor="@color/colorAccentSpinner"-->
+            <!--app:layout_constraintBottom_toTopOf="@+id/bottomOfEtMissionChose"-->
+            <!--app:layout_constraintEnd_toStartOf="@+id/leftOfETs"-->
+            <!--app:layout_constraintStart_toStartOf="@+id/rightOfETs"-->
+            <!--app:layout_constraintTop_toTopOf="@+id/topOfEtMissionChose"-->
+            <!--app:ShowBorders="true"-->
+            <!--app:BordersSize="1dp"-->
+            <!--app:BoarderColor="@color/colorAccentSpinner"-->
+            <!--app:SpinnerExpandHeight="0dp"-->
+            <!--/>-->
+
+        <EditText
+            android:id="@+id/txt_mission_name"
+            android:hint="@string/search_by_tower_name"
+            android:text="@={repairTowerChoseVM.nameSearchBoxInput}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            app:textviewfont="@{`faNumRegular`}"
+            android:textSize="@dimen/_13ssp"
+            android:textColor="@color/black"
+            android:layout_margin="8dp"
+            android:padding="8dp"
+            android:background="@drawable/hint_dialog_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/topOfEtMissionChose"/>
+
+
+        <com.controladad.boutia_pms.adapters.StatefulRecyclerView
+            android:id="@+id/statefulRecyclerView"
+            style="@style/scrollbar_shape_style"
+            adapter_vertical="@{repairTowerChoseVM.adapter}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:fadeScrollbars="false"
+            android:paddingEnd="32dp"
+
+            app:layout_constraintBottom_toTopOf="@+id/topOfEtReviewDate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_mission_name" />
+
+        
+        <TextView
+            android:id="@+id/txtTowerNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="start"
+            android:text="@string/selected_tower_number"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomOfEtReviewDate"
+            app:layout_constraintStart_toStartOf="@+id/rightOfETs"
+            app:layout_constraintTop_toTopOf="@+id/topOfEtReviewDate"
+            app:textviewfont="@{`faNumRegular`}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="start"
+            android:text="@{repairTowerChoseVM.selectedBarcode}"
+            android:textColor="@color/red_700"
+            android:textSize="@dimen/_17ssp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomOfEtReviewDate"
+            app:layout_constraintStart_toEndOf="@id/txtTowerNumber"
+            app:layout_constraintTop_toTopOf="@+id/topOfEtReviewDate"
+            app:textviewfont="@{`faNumBold`}" />
+
+
+        <Button
+            android:onClick="@{repairTowerChoseVM.onOkButtonClicked()}"
+            android:id="@+id/btnSubmitRepairMissionChose"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/background_gradient_orange_yellow"
+            android:textColor="@color/white"
+            android:text="@string/ok_and_continue"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            textviewfont="@{`faNumRegular`}"
+            android:textSize="@dimen/_19ssp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomOfSubmitButton"
+            app:layout_constraintEnd_toEndOf="@+id/leftOfSubmitButton"
+            app:layout_constraintStart_toEndOf="@+id/rightOfSubmitButton"
+            app:layout_constraintTop_toTopOf="@+id/topOfSubmitButton"
+            />
+        <!--                android:drawableStart="@drawable/ic_forward"
+-->
+
+        <ImageView
+            android:id="@+id/img_clear_filter"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="@{repairTowerChoseVM.filterTowerVisibility}"
+            android:onClick="@{repairTowerChoseVM.onClearFilterClick()}"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomOfTxtMissionChose"
+            app:layout_constraintEnd_toStartOf="@+id/leftOfETs"
+            app:layout_constraintStart_toStartOf="@+id/leftOfSubmitButton"
+            app:layout_constraintTop_toTopOf="@+id/topOfClearFilter"
+            segmentedgroup:srcCompat="@drawable/ic_clear_filter" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

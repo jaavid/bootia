@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="radio_button_selected_color">#5f9fba</color>
+    <color name="radio_button_unselected_color">#fff</color>
+    <color name="gray_border">#979797</color>
+    <color name="colorAccent">#5f9fba</color>
+    <color name="black">#000</color>
+</resources>

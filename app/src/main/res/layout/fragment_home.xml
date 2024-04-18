@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="homeVM"
+            type="com.controladad.boutia_pms.view_models.HomeVM" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="rtl"
+        android:orientation="vertical"
+        android:weightSum="1">
+        <!--
+                <com.flaviofaria.kenburnsview.KenBurnsView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.4"
+                    android:src="@drawable/test"
+                    />-->
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.4"
+            android:scaleType="fitXY"
+            android:src="@drawable/towerbg" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:gravity="center"
+                android:onClick="@{homeVM.onRepairButtonClicked()}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:src="@drawable/ic_repiars" />
+
+                <TextView
+                    textviewfont="@{`faNumRegular`}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:text="@string/repair"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_19ssp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:onClick="@{homeVM.onReviewClick()}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_control" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/review"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_19ssp"
+                    app:textviewfont="@{`faNumRegular`}" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:gravity="center"
+                android:onClick="@{homeVM.onReportButtonClicked()}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_report" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reports"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_19ssp"
+                    app:textviewfont="@{`faNumRegular`}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:gravity="center"
+                android:onClick="@{homeVM.onSettingButtonClicked()}"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_setting" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/settings"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_19ssp"
+                    app:textviewfont="@{`faNumRegular`}" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--<Button-->
+            <!--android:id="@+id/buttonFake"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:onClick="@{homeVM.fakeDataGenerator()}"-->
+            <!--android:text="@={homeVM.buttonFake}" />-->
+
+    </LinearLayout>
+
+</layout>

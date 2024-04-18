@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="mainActivityVM"
+            type="com.controladad.boutia_pms.view_models.MainActivityVM"/>
+    </data>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layoutDirection="rtl"
+                tools:context="com.controladad.boutia_android.MainActivity">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="24dp"
+                    android:layoutDirection="rtl"
+                    android:theme="@style/AppTheme.AppBarOverlayOffer">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimary"
+                        app:popupTheme="@style/AppTheme.AppBarOverlayOffer"
+                        android:visibility="@{mainActivityVM.toolbarVisibility}"
+                        >
+
+
+                        <FrameLayout
+                            android:id="@+id/ic_left"
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:layout_gravity="left">
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:onClick="@{mainActivityVM.onLeftToolBarIconClickListener}"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:padding="12dp"
+                                app:image_src="@{mainActivityVM.leftIconSourceId}"
+                                />
+                        </FrameLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/toolbar_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="4dp"
+                                android:layout_gravity="center"
+                                android:text="@{mainActivityVM.currentPageTitle}"
+                                android:textColor="@color/white"
+                                app:textviewfont="@{`faNumRegular`}"
+                                android:textSize="@dimen/_16ssp" />
+
+                            <TextView
+                                android:id="@+id/toolbar_sub_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="4dp"
+                                android:layout_gravity="center"
+                                android:text="@{mainActivityVM.currentPageSubTitle}"
+                                android:textColor="@color/white"
+                                app:textviewfont="@{`faNumRegular`}"
+                                android:textSize="@dimen/_7ssp" />
+
+                        </LinearLayout>
+
+
+                        <FrameLayout
+                            android:id="@+id/ic_right"
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            android:visibility="@{mainActivityVM.rightIconVisibility}"
+                            android:layout_gravity="right">
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:onClick="@{mainActivityVM.onRightToolBarIconClickListener}"
+                                app:image_src="@{mainActivityVM.rightIconSourceId}"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:padding="10dp"
+                                />
+
+                        </FrameLayout>
+                    </androidx.appcompat.widget.Toolbar>
+                </com.google.android.material.appbar.AppBarLayout>
+
+                <FrameLayout
+                    android:id="@+id/fragment_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/hint_fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </FrameLayout>
+        </FrameLayout>
+
+
+</layout>

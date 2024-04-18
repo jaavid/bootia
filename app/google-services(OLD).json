@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "679450315011",
+    "firebase_url": "https://boutia-project.firebaseio.com",
+    "project_id": "boutia-project",
+    "storage_bucket": "boutia-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679450315011:android:2ddbac7ed10ab9d3",
+        "android_client_info": {
+          "package_name": "com.controladad.boutia_pms"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "679450315011-49gl7h1159gb07ep51nl5oh0kuaupdhm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.controladad.boutia_pms",
+            "certificate_hash": "db997df8772b0627468bb4e8503a0686793b4a0e"
+          }
+        },
+        {
+          "client_id": "679450315011-gtbh0k32k64sd1721flrg0dvlc231uvg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLMnprNDQqM_QwmGoXyx2BkNKpL0Twxkk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "679450315011-gtbh0k32k64sd1721flrg0dvlc231uvg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
