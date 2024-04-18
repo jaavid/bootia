@@ -27,9 +27,15 @@ jobs:
 
     - name: Build tabriz APK
       run: ./gradlew assembleTabrizRelease
+      env:
+        KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+        KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
 
     - name: Build kerman APK
       run: ./gradlew assembleKermanRelease
+      env:
+        KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+        KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
 
     - name: Create Release
       id: create_release

@@ -23,13 +23,13 @@ android {
         javaMaxHeapSize "4g"
     }
     signingConfigs {
-        release {
-            keyAlias 'boutia'
-            keyPassword 'CAC.110'
-            storeFile file('BoutiaKeyStore.jks')
-            storePassword 'CAC.110'
-        }
+    release {
+        keyAlias 'boutia'
+        keyPassword System.getenv('KEY_PASSWORD') ?: project.findProperty('keyPassword')
+        storeFile file('BoutiaKeyStore.jks')
+        storePassword System.getenv('KEYSTORE_PASSWORD') ?: project.findProperty('storePassword')
     }
+}
     compileSdkVersion 30
     defaultConfig {
         applicationId "com.controladad.boutia_pms"
