@@ -22,7 +22,7 @@ jobs:
       run: chmod +x gradlew
 
     - name: Build APK
-      run: ./gradlew assembleTabrizDebug
+      run: ./gradlew assembleTabrizRelease
 
     - name: Upload APK
       uses: actions/upload-artifact@v2
