@@ -1,4 +1,4 @@
-name: Build APK
+name: Build APK and Release
 
 on:
  push:
@@ -24,17 +24,36 @@ jobs:
     - name: Build tabriz APK
       run: ./gradlew assembleTabrizRelease
 
-    - name: Upload tabriz APK
-      uses: actions/upload-artifact@v2
-      with:
-        name: app-tabriz-release
-        path: app/build/outputs/apk/tabriz/release/app-tabriz-release.apk
-
     - name: Build kerman APK
       run: ./gradlew assembleKermanRelease
 
-    - name: Upload kerman APK
-      uses: actions/upload-artifact@v2
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by GitHub Actions
       with:
-        name: app-kerman-release
-        path: app/build/outputs/apk/kerman/release/app-kerman-release.apk
+        tag_name: ${{ github.ref }} # Use the branch name as the tag name
+        release_name: Release ${{ github.ref }} # Name of the release
+        draft: false
+        prerelease: false
+
+    - name: Upload tabriz APK
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: app/build/outputs/apk/tabriz/release/app-tabriz-release.apk
+        asset_name: app-tabriz-release.apk
+        asset_content_type: application/vnd.android.package-archive
+
+    - name: Upload kerman APK
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: app/build/outputs/apk/kerman/release/app-kerman-release.apk
+        asset_name: app-kerman-release.apk
+        asset_content_type: application/vnd.android.package-archive
