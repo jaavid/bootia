@@ -2,8 +2,8 @@ name: Build & Publish Release Tabriz APK
 
 on:
  push:
-    tags:
-      - '*'
+  branches:
+   - main
 
 jobs:
  Gradle:
@@ -18,7 +18,7 @@ jobs:
     - name: Make Gradle executable
       run: chmod +x ./gradlew
     - name: Build Release APK
-      run: ./gradlew assembleRelease
+      run: ./gradlew assembleTabrizRelease
     - name: Releasing using Hub
       uses: sangatdesai/release-apk@main
       env:
